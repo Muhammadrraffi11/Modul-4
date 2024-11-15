@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .jurusan {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h3 style="color: yellow; font-size: 50px;" align="center">PROGRAM STUDI FAKULTAS ILMU KOMPUTER</h3>
+
+    <div style="text-align: center; margin-bottom: 20px;">
+        <input 
+            type="text" 
+            id="search" 
+            placeholder="Cari nama jurusan..." 
+            onkeyup="filterJurusan()" 
+            style="padding: 10px; width: 80%; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;"
+        />
+    </div>
+
+    <div id="jurusan-list">
+        <div class="jurusan" data-name="Sistem Informasi">
+            <h4>Sistem Informasi</h4>
+            <p>Terakreditasi B. Fokus pada rekayasa sistem informasi yang handal dan inovatif.</p>
+        </div>
+
+        <div class="jurusan" data-name="Teknik Informatika">
+            <h4>Teknik Informatika</h4>
+            <p>Terakreditasi B. Berfokus pada pengembangan perangkat lunak dan aplikasi mobile.</p>
+        </div>
+
+        <div class="jurusan" data-name="Desain Komunikasi Visual">
+            <h4>Desain Komunikasi Visual</h4>
+            <p>Proses Terakreditasi B. Menyediakan keterampilan desain multimedia yang kreatif.</p>
+        </div>
+
+        <div class="jurusan" data-name="Manajemen Informatika">
+            <h4>Manajemen Informatika</h4>
+            <p>Proses Terakreditasi B. Memiliki fokus pada pemrograman aplikasi dan pengelolaan sistem informasi.</p>
+        </div>
+    </div>
+
+    <script>
+        function filterJurusan() {
+            const searchInput = document.getElementById("search").value.toLowerCase();
+            const jurusanElements = document.querySelectorAll(".jurusan");
+            jurusanElements.forEach(jurusan => {
+                const jurusanName = jurusan.getAttribute("data-name").toLowerCase();
+
+                if (jurusanName.includes(searchInput)) {
+                    jurusan.classList.remove("hidden");
+                } else {
+                    jurusan.classList.add("hidden");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

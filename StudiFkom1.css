@@ -1,0 +1,32 @@
+li{
+    display: inline;
+}
+
+body{
+    background-image: url(asset/Kampus2w.jpg);
+    background-size: 1900px;
+    background-repeat: no-repeat;
+}
+
+a{
+    color: yellow;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ul{
+    padding: 30px;  
+    background-color:rgba(255, 255, 0, 0) ;
+    background-size: 5px;
+}
+
+li:hover{
+    background-color: linen;
+    border-radius: 20px;
+}
+
+li{
+    display: inline;
+    padding: 30px;
+    border: 50px;
+}
